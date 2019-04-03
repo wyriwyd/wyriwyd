@@ -1,5 +1,11 @@
+
+from pygments import highlight
+from pygments.lexers import DiffLexer
+from pygments.formatters import Terminal256Formatter
+
 from .parser import parse_file
 from .checker import check_commands
+
 import logging
 logger = logging.getLogger(__name__)
 logger.setLevel("INFO")
@@ -28,5 +34,5 @@ def main(args=None):
         return 0
 
     for error in errors:
-        print("Error:", error)
+        print(highlight(error, DiffLexer(), Terminal256Formatter()))
     return 1
