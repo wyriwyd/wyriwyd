@@ -31,18 +31,3 @@ class ShellExecutor():
                 break
             lines.append(last_line)
         return lines
-
-
-if __name__ == "__main__":
-
-
-    cmds = ["export MY_VARIABLE='hello world'",
-            "cd wyriwyd/",
-            "pwd",
-            "echo MY_VARIABLE = $MY_VARIABLE"]
-
-    with ShellExecutor() as executor:
-        for command in cmds:
-            output = executor.run_command(command)
-            print("$", command)
-            print(output)

@@ -62,3 +62,5 @@ def test_parse_string():
     assert all(map(lambda x: len(x) == 2, pairs))
     assert pairs[0][0] == """echo "cats are great cats" | sed 's/cat/kitten/'"""
     assert pairs[0][1] == """kittens are great cats"""
+    assert pairs[1][0] == """echo "cats are great cats" | sed 's/cat/kitten/g'"""
+    assert pairs[1][1] is None
