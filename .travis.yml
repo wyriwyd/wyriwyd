@@ -5,4 +5,5 @@ python:
 script:
   - pip install .
   - pytest
+  - python -c "import wyriwyd; print(wyriwyd)"
   - wyriwyd-test README.md
