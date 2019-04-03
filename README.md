@@ -51,6 +51,7 @@ wyriwyd-test sample.md
 And if everything is ok, you should see:
 ```output
 Everything looks ok!!
+OOPS I@VE BROKEN THINGS
 ```
 
 For more support on the testing tool, use `--help`
