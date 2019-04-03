@@ -33,3 +33,19 @@ touch unimportant_file
 ```
 ```
 ```
+
+Some commands will need an input file to work on. Make sure this file exists 
+inside the repo, and the path is correct.
+```bash
+cat cats.dat
+```
+
+```
+tiger
+lion
+cheetah
+housecat
+jaguar
+Mr Mittens
+```
+
