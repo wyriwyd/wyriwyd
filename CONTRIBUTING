@@ -1,0 +1,13 @@
+# Contributing
+
+WYRIWYD was developed as a hackday demo.
+There is plenty of scope for further development and contributions are welcome.
+
+- Please use the Issue Tracker for bug reports and feature proposals.
+- Contributions can be made by forking on Github and
+  [making a pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork).
+  Before beginning ambitious changes, please discuss your ideas with
+  the owners of this repository through the Issue tracker.
+- Please bear in mind that this package is intended for novice
+  programmers; avoid introducing large/complex dependencies or a
+  requirement for advanced framework knowlege.
