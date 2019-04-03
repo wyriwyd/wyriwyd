@@ -25,3 +25,11 @@ kittens are great kittens
 
 We should probably add some pictures or something as well.
 
+Some commands don't have outputs, but in our tutorial syntax we use an
+empty code block to indicate this.
+
+```bash
+touch unimportant_file
+```
+```
+```
