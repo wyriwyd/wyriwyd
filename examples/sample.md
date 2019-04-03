@@ -32,8 +32,6 @@ empty code block to indicate this.
 ```bash
 touch unimportant_file
 ```
-```output
-```
 
 Some commands will need an input file to work on. Make sure this file exists 
 inside the repo, and the path is correct.
