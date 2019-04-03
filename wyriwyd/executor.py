@@ -2,6 +2,9 @@ from __future__ import print_function
 import subprocess
 
 
+COMMAND_ENDED_STRING = "END COMMAND slufhaspidfha" * 5
+
+
 class ShellExecutor():
 
     def __init__(self):
@@ -18,39 +21,28 @@ class ShellExecutor():
         self.process.wait()
 
     def run_command(self, command):
-        wrapped_command = "{}; echo END\n".format(command)
+        wrapped_command = "{}; echo {}\n".format(command, COMMAND_ENDED_STRING)
         self.process.stdin.write(wrapped_command.encode())
         self.process.stdin.flush()
-        return self.process.stdout.readline().decode().strip()
-
-def dummy():
-    process = subprocess.Popen(['/bin/cat'],
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE)
-    process.stdin.write(b'Hello\n')
-    process.stdin.flush()
-    print(repr(process.stdout.readline())) # Should print 'Hello\n'
-    process.stdin.write(b'World\n')
-    process.stdin.flush()  
-    print(repr(process.stdout.readline())) # Should print 'World\n'
-
-    # "cat" will exit when you close stdin.  (Not all programs do this!)
-    process.stdin.close()
-    print('Waiting for cat to exit')
-    process.wait()
-    print('exit')
+        lines = []
+        while True:
+            last_line = self.process.stdout.readline().decode().strip()
+            if last_line == COMMAND_ENDED_STRING:
+                break
+            lines.append(last_line)
+        return lines
 
 
 if __name__ == "__main__":
-    dummy()
 
 
-    cmds = ["echo export MY_VARIABLE='hello world'",
+    cmds = ["export MY_VARIABLE='hello world'",
             "cd wyriwyd/",
             "pwd",
-            "echo MY_VARIABLE = '$MY_VARIABLE'"]
+            "echo MY_VARIABLE = $MY_VARIABLE"]
 
     with ShellExecutor() as executor:
         for command in cmds:
             output = executor.run_command(command)
+            print("$", command)
             print(output)
