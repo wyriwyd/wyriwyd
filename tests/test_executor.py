@@ -18,3 +18,15 @@ def test_executor(tmpdir):
     cmd_out = "{0} {1}:{0}:{1}"
     cmd_out = cmd_out.format(os.path.dirname(tmpdir), str(tmpdir))
     assert outputs[4] == cmd_out.split(":")
+
+
+def test_cat(tmpdir):
+    filename = tmpdir / "contents.txt"
+    with open(filename, "w") as outfile:
+        outfile.write("hello file\n")
+    cmds = [f"cat {filename}"]
+
+    outputs = []
+    with ShellExecutor() as executor:
+        for command in cmds:
+            outputs.append(executor.run_command(command))
