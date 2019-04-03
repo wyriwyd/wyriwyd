@@ -11,7 +11,7 @@
 Institute
 [Collaborations Workshop 2019](https://software.ac.uk/cw19).)
 
-![The wyriwyd dragon logo](https://github.com/wyriwyd/wyriwyd/blob/master/wyriwyd-dragon.png)
+![The wyriwyd dragon logo](wyriwyd-dragon.png)
 
 ## Introduction
 
