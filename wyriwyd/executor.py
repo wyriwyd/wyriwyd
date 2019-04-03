@@ -26,7 +26,7 @@ class ShellExecutor():
         self.process.stdin.flush()
         lines = []
         while True:
-            last_line = self.process.stdout.readline().decode().strip()
+            last_line = self.process.stdout.readline().decode()[:-1]
             if last_line == COMMAND_ENDED_STRING:
                 break
             lines.append(last_line)
