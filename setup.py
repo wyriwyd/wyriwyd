@@ -17,7 +17,7 @@ test_requirements = ['pytest', 'flake8', 'pytest-cov']
 
 setup(
     author="SSI hackers",
-    author_email='b.krikler@cern.ch',
+    author_email='a.j.jackson@physics.org',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
