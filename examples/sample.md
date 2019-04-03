@@ -9,7 +9,7 @@ Please run this from inside the `examples` subdirectory.
 echo "cats are great cats" | sed 's/cat/kitten/'
 ```
 
-```
+```output
 kittens are great cats
 ```
 
@@ -20,7 +20,7 @@ append a trailing *g*.
 echo "cats are great cats" | sed 's/cat/kitten/g'
 ```
 
-```
+```output
 kittens are great kittens
 ```
 
@@ -32,7 +32,7 @@ empty code block to indicate this.
 ```bash
 touch unimportant_file
 ```
-```
+```output
 ```
 
 Some commands will need an input file to work on. Make sure this file exists 
@@ -41,7 +41,7 @@ inside the repo, and the path is correct.
 cat cats.dat
 ```
 
-```
+```output
 tiger
 lion
 cheetah
@@ -58,11 +58,6 @@ echo catdog > dogs.dat
 wc -l dogs.dat
 ```
 
-```
+```output
 1 dogs.dat
 ```
-
-
-
-
-

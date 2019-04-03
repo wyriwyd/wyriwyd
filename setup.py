@@ -33,6 +33,9 @@ setup(
     ],
     description="",
     entry_points={
+        'console_scripts': [
+            'wyriwyd-test=wyriwyd.__main__:main',
+        ],
     },
     install_requires=requirements,
     dependency_links=repositories,
