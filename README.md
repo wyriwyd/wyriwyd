@@ -44,6 +44,10 @@ pip install git+https://github.com/wyriwyd/wyriwyd.git#egg=wyriwyd
 ```
 
 ## Usage
+To generate markdown documentation, run the `wyriwydzard` command.
+After entering the name of the document to generate, keep entering your commands in the prompt. A bare-bones tutorial will be
+generated in markdown, which you can expand with explanations of the commands.
+
 To test existing markdown documentation, just run the `wyriwyd-test` command over the markdown file.  Note if the commands in the documentation assume you will be in a given directory, then you should `cd` there first.
 ```bash
 cd examples/
