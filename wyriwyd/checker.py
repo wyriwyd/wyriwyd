@@ -1,5 +1,8 @@
-from .executor import ShellExecutor
 import logging
+from difflib import ndiff
+
+from .executor import ShellExecutor
+
 logger = logging.getLogger(__name__)
 
 
@@ -30,10 +33,13 @@ def check_commands(commands, no_expected_means_empty_out=True, raise_error=True)
             if expected is None:
                 continue
             if output != expected:
-                msg = f"Output not matching expectationg for cmd '''{command}'''"
-                full = msg + f"\n\nExpected:\n{expected}\n\nReceived:\n{output}"
+                full = [f"@@ Output not matching expectation for cmd '''{command}'''@@"]
+                full += [
+                    line.strip("\n")
+                    for line in ndiff(output.splitlines(True), expected.splitlines(True))
+                ]
+                errors += full
                 if raise_error:
                     logger.error(full)
                     raise OutputDoesntMatchExpectation(msg)
-                errors.append(full)
     return errors

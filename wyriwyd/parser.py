@@ -1,4 +1,3 @@
-from __future__ import print_function
 import mistletoe
 from mistletoe.block_token import CodeFence
 

@@ -1,5 +1,6 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Build Status](https://travis-ci.com/wyriwyd/wyriwyd.svg?branch=master)](https://travis-ci.com/wyriwyd/wyriwyd)
+[![codecov](https://codecov.io/gh/wyriwyd/wyriwyd/branch/master/graph/badge.svg)](https://codecov.io/gh/wyriwyd/wyriwyd)
 [![Collaborations Workshop 2019](https://img.shields.io/badge/developed%20at-CollabW19-red.svg)](https://software.ac.uk/cw19)
 
 
