@@ -4,6 +4,10 @@ python:
 - 3.6
 script:
   - pip install .
-  - pytest
+  - pytest --cov=./
   - python -c "import wyriwyd; print(wyriwyd)"
   - wyriwyd-test README.md
+
+after_success:
+  - pip install codecov
+  - codecov
