@@ -17,7 +17,7 @@ while read -p "$ " command && test -n "$command" ; do
     fi
     echo -e "$output\n"
     if [ -n "$output" ]; then
-        echo -e "\`\`\`bash\n${command}\n\`\`\`\n\n\`\`\`\n$output\n\`\`\`\n" >> "$outfile"
+        echo -e "\`\`\`bash\n${command}\n\`\`\`\n\n\`\`\`output\n$output\n\`\`\`\n" >> "$outfile"
     else
         echo -e "\`\`\`bash\n${command}\n\`\`\`\n" >> "$outfile"
     fi
