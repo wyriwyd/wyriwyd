@@ -1,4 +1,3 @@
-import pytest
 from wyriwyd.executor import ShellExecutor
 
 
