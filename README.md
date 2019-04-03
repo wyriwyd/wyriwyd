@@ -1,3 +1,8 @@
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Build Status](https://travis-ci.com/wyriwyd/wyriwyd.svg?branch=master)](https://travis-ci.com/wyriwyd/wyriwyd)
+[![Collaborations Workshop 2019](https://img.shields.io/badge/developed%20at-CollabW19-red.svg)](https://software.ac.uk/cw19)
+
+
 # WYRIWYD: What You Run Is What You Document
 
 *Generate maintainable tutorials quickly*
@@ -30,3 +35,37 @@ The main components of WYRIWYD are:
   is used, this test can be added to the repository hooks for futher
   peace of mind.
 
+## Installation
+```
+pip install git+https://github.com/wyriwyd/wyriwyd.git#egg=wyriwyd
+```
+
+## Usage
+To test existing markdown documentation, just run the `wyriwyd-test` command over the markdown file.  Note if the commands in the documentation assume you will be in a given directory, then you should `cd` there first.
+```bash
+cd examples/
+wyriwyd-test sample.md
+```
+And if everything is ok, you should see:
+```output
+Everything looks ok!!
+```
+
+For more support on the testing tool, use `--help`
+```bash
+wyriwyd-test --help
+```
+```output
+usage: wyriwyd-test [-h] [-r] [-e EMPTY] infile
+
+positional arguments:
+  infile                The path to the input markdown file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -r, --raise-error     Raise an exception at the first error
+  -e EMPTY, --empty EMPTY
+                        If the Markdown file contains commands without a
+                        following output, and the command when runs produces
+                        output, treat this as an error
+```
