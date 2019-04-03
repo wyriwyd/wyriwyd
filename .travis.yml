@@ -5,3 +5,4 @@ python:
 script:
   - pip install .
   - pytest
+  - wyriwyd-test README.md
