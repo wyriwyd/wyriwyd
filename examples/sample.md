@@ -3,6 +3,7 @@ Tutorial
 
 This is the tutorial for a totally awesome package. We haven't written
 it yet, so instead we'll be demoing some bash tools.
+Please run this from inside the `examples` subdirectory.
 
 ```bash
 echo "cats are great cats" | sed 's/cat/kitten/'
@@ -33,3 +34,35 @@ touch unimportant_file
 ```
 ```
 ```
+
+Some commands will need an input file to work on. Make sure this file exists 
+inside the repo, and the path is correct.
+```bash
+cat cats.dat
+```
+
+```
+tiger
+lion
+cheetah
+housecat
+jaguar
+Mr Mittens
+```
+
+You might also have a series of commands that are prerequisites to one command
+running successfully and/or producing the expected output.
+```bash
+touch dogs.dat
+echo catdog > dogs.dat
+wc -l dogs.dat
+```
+
+```
+1 dogs.dat
+```
+
+
+
+
+
