@@ -3,13 +3,15 @@
 [![Collaborations Workshop 2019](https://img.shields.io/badge/developed%20at-CollabW19-red.svg)](https://software.ac.uk/cw19)
 
 
-# WYRIWYD: What You Run Is What You Document
+# WYRIWYD: What You Run Is What You Doc
 
 *Generate maintainable tutorials quickly*
 
 (A hackday project from the Software Sustainability
 Institute
 [Collaborations Workshop 2019](https://software.ac.uk/cw19).)
+
+![The wyriwyd dragon logo](wyriwyd-dragon.png)
 
 ## Introduction
 
@@ -69,3 +71,9 @@ optional arguments:
                         following output, and the command when runs produces
                         output, treat this as an error
 ```
+
+## Incuding into continuous integration:
+We even run the command itself over this README:
+* https://github.com/wyriwyd/wyriwyd/blob/master/.travis.yml
+
+There's also an example project at https://github.com/wyriwyd/wyriwyd-live-demo
