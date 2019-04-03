@@ -4,6 +4,7 @@ python:
 - 3.6
 script:
   - pip install .
+  - pip install --upgrade pytest pytest-cov
   - pytest --cov=./
   - python -c "import wyriwyd; print(wyriwyd)"
   - wyriwyd-test README.md
