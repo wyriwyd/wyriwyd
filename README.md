@@ -1,3 +1,6 @@
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Build Status](https://travis-ci.com/wyriwyd/wyriwyd.svg?branch=master)](https://travis-ci.com/wyriwyd/wyriwyd)
+
 # WYRIWYD: What You Run Is What You Document
 
 *Generate maintainable tutorials quickly*
