@@ -1,16 +1,20 @@
 #!/bin/bash
+
 read -p "Output file name (.md): " outfile
 rm -f "$outfile"
+
 echo -e "Start typing your commands. When done, press enter.
 File $outfile containing the session will be genarated."
+
 mysys="$(uname -s)"
-tmpfile="/tmp/mytemp"
+tmpfile="/tmp/wyriwyd.log"
+rm -f "$tmpfile"
+
 while read -p "$ " command && test -n "$command" ; do
     if [ "$mysys" = "Linux" ]; then
-        output="$(script -c "$command" -q --)"
+        output="$(script -c "$command" -q -- "$tmpfile" | sed 's/\r$//')"
     elif [ "$mysys" = "Darwin" ]; then
-        output="$(script "$tmpfile" "$command" -q ; cat "$tmpfile")"
-        rm "$tmpfile"
+        output="$(script -q "$tmpfile" "$command" | sed 's/\r$//')"
     else
         echo "Unknown system"
         return 1
@@ -22,3 +26,5 @@ while read -p "$ " command && test -n "$command" ; do
         echo -e "\`\`\`bash\n${command}\n\`\`\`\n" >> "$outfile"
     fi
 done
+
+rm -f "$tmpfile"
