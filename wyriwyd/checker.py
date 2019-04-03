@@ -1,6 +1,7 @@
-from .executor import ShellExecutor
 import logging
 from difflib import ndiff
+
+from .executor import ShellExecutor
 
 logger = logging.getLogger(__name__)
 
