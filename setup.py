@@ -32,6 +32,7 @@ setup(
     entry_points={
         'console_scripts': [
             'wyriwyd-test=wyriwyd.__main__:main',
+            'wyriwydzard-new=wyriwyd.__main__:main_wizard',
         ],
     },
     install_requires=requirements,

@@ -5,6 +5,7 @@ from pygments.formatters import Terminal256Formatter
 
 from .parser import parse_file
 from .checker import check_commands
+from .interactive import make_doc_from_session
 
 import logging
 logger = logging.getLogger(__name__)
@@ -36,3 +37,22 @@ def main(args=None):
     for error in errors:
         print(highlight(error, DiffLexer(), Terminal256Formatter()))
     return 1
+
+
+def prepare_parser_wizard():
+    from argparse import ArgumentParser
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument("-o", "--outfile", default=None,
+                        help="The path to the output markdown documentation")
+    parser.add_argument("-a", "--append", default=False, action="store_true",
+                        help="Append to existing documentation, rather than overwrite it")
+    parser.add_argument("-s", "--skip-blank-output", default=False, action="store_true",
+                        help="""If a command prints no output, don't add a blank \
+output section to the documentation""")
+    return parser
+
+
+def main_wizard(args=None):
+    args = prepare_parser_wizard().parse_args(args=args)
+    make_doc_from_session(**vars(args))
+    return 0
